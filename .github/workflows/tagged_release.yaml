@@ -8,11 +8,11 @@ jobs:
   prebuild-node:
     strategy:
       matrix:
-        os: [ ubuntu-latest, windows-2016, macos-latest ]
-        node: [ 14]
+        os: [ ubuntu-latest ]
+        node: [ 16 ]
         task: [ prebuild ]
         runtime: [ node ]
-        target: [ "16.0.0", "18.0.0"]
+        target: [ "16.0.0", "18.0.0" ]
     runs-on: ${{matrix.os}}
     steps:
       - name: Set up Git repository
@@ -21,34 +21,6 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{matrix.node}}
-      - name: Configure msvs version on Windows
-        if: ${{matrix.os == 'windows-2016'}}
-        run: npm config set msvs_version 2017
-      - name: Install
-        run: npm ci --unsafe-perm
-      - name: Publish prebuild
-        shell: bash
-        run: npm run prebuild -- -t ${{matrix.target}} -r ${{matrix.runtime}} --include-regex "\.(node|a|so|dylib|lib|dll).*$" -u ${{ secrets.GITHUB_TOKEN }}
-
-  prebuild-electron:
-    strategy:
-      matrix:
-        os: [ ubuntu-latest, windows-2016, macos-latest ]
-        node: [ 14 ]
-        task: [ prebuild ]
-        runtime: [ electron ]
-        target: [ "8.0.0", "9.0.0", "10.0.0", "11.0.0", "12.0.0", "13.0.0", "14.0.0" ]
-    runs-on: ${{matrix.os}}
-    steps:
-      - name: Set up Git repository
-        uses: actions/checkout@v2
-      - name: Set up node
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{matrix.node}}
-      - name: Configure msvs version on Windows
-        if: ${{matrix.os == 'windows-2016'}}
-        run: npm config set msvs_version 2017
       - name: Install
         run: npm ci --unsafe-perm
       - name: Publish prebuild
@@ -58,7 +30,6 @@ jobs:
   deploy:
     needs:
       - prebuild-node
-      - prebuild-electron
     runs-on: ubuntu-latest
     steps:
       - name: Set up Git repository
@@ -66,7 +37,7 @@ jobs:
       - name: Set up node
         uses: actions/setup-node@v2
         with:
-          node-version: 14
+          node-version: 16
       - name: Publish tagged release
         uses: JS-DevTools/npm-publish@v1
         with:
