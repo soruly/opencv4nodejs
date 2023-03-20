@@ -1,5 +1,9 @@
 # changelog
 
+## Version 6.5.1
+- patch imencode electron 21+ memory cage 
+- patch add mask option to the detect function
+
 ## Version 6.5.0
 - integrate native-node-utils code inside cc/native-node-utils
 - add comments in native-node-utils
