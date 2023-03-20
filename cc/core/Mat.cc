@@ -831,7 +831,7 @@ NAN_METHOD(Mat::SetData) {
   char *data = static_cast<char *>(node::Buffer::Data(info[0]->ToObject(Nan::GetCurrentContext()).ToLocalChecked()));
   size_t size = mat.rows * mat.cols * mat.elemSize();
   memcpy(mat.data, data, size);
-  info.GetReturnValue().Set(mat);
+  info.GetReturnValue().Set(Mat::Converter::wrap(mat));
 }
 
 NAN_METHOD(Mat::GetRegion) {
