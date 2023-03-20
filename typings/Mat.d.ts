@@ -414,6 +414,8 @@ export class Mat {
   gaussianBlurAsync(kSize: Size, sigmaX: number, sigmaY?: number, borderType?: number): Promise<Mat>;
   getData(): Buffer;
   getDataAsync(): Promise<Buffer>;
+  setData(buffer: Buffer): Mat;
+
   /**
    * if Mat.dims <= 2
    * 
