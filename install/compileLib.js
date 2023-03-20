@@ -318,7 +318,7 @@ or use OPENCV4NODEJS_* env variable.`);
         const config = {
             "name": "opencv4nodejs",
             "includePath": [
-                'Missing node-gyp/Cache/16.13.1/include/node',
+                // 'Missing node-gyp/Cache/16.13.1/include/node',
                 ...OPENCV4NODEJS_INCLUDES,
                 '${workspaceFolder}/node_modules/nan',
                 '${workspaceFolder}/node_modules/native-node-utils/src',
