@@ -414,6 +414,11 @@ export class Mat {
   gaussianBlurAsync(kSize: Size, sigmaX: number, sigmaY?: number, borderType?: number): Promise<Mat>;
   getData(): Buffer;
   getDataAsync(): Promise<Buffer>;
+  /**
+   * Copy a Buffer into an existing Mat object.
+   * The actual size written is defined by the target Mat size (mat.rows * mat.cols * mat.elemSize())
+   * @param buffer
+   */
   setData(buffer: Buffer): Mat;
 
   /**
