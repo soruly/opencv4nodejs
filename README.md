@@ -21,8 +21,8 @@ If you do not install openCV with a common setup like chocolate, apt or brew, yo
 #### 2) package.json
 Define an opencv4nodejs section in your package.json like:
 ```json
-"opencv4nodejs" {
-  "disableAutoBuild": "1",
+"opencv4nodejs": {
+  "disableAutoBuild": "1"
 }
 ```
 If you do not install openCV with a common setup like chocolote, apt or brew, you may need to also define:
