@@ -1,5 +1,8 @@
 # changelog
 
+## Version 6.5.2
+- fix typing error
+
 ## Version 6.5.1
 - patch imencode electron 21+ memory cage 
 - patch add mask option to the detect function
