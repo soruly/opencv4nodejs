@@ -279,12 +279,12 @@ I provided a step by step guide for implementing class bindings in this [tutoria
 For continous integration we use AppVeyor and Travis CI, which will run a rebuild of the package on Windows and Linux and run the unit tests for each of the maintained OpenCV versions. This ensures compatibility across the OpenCV versions as in some minor cases the OpenCV interface may have changed or new features have been added.
 
 The build task will be executed on every push to your working branch as well as every pull request before merging to the master branch. If you have docker set up on your local machine you can run the build tasks on your local machine via the provided npm scripts under ci/test.
-For example to execute a build for OpenCV 3.4.6 under node 11:
+For example to execute a build for OpenCV 3.4.6 under node 18:
 
 ``` bash
 # with contrib (OpenCV extra modules)
-npm run test 3.4.6-contrib 11
+npm run test 4.5.5-contrib 18
 
 # without contrib
-npm run test 3.4.6 11
+npm run test 4.5.5 11
 ```
