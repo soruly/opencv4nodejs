@@ -18,6 +18,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: run apt-get update
+        run: sudo apt-get update
       - name: Install libopencv
         run: sudo apt-get install -y libopencv-dev libopencv-features2d-dev
       - uses: actions/checkout@v3
