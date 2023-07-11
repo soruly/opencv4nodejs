@@ -41,6 +41,7 @@
   "dependencies": {
     "nan": "^2.15.0",
     "native-node-utils": "^0.2.7",
+    "node-gyp": "^9.4.0",
     "npmlog": "^7.0.1",
     "prebuild-install": "^7.1.1"
   },
