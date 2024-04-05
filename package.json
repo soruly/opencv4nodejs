@@ -41,7 +41,7 @@
   "dependencies": {
     "nan": "^2.15.0",
     "native-node-utils": "^0.2.7",
-    "node-gyp": "^9.4.0",
+    "node-gyp": "^10.1.0",
     "npmlog": "^7.0.1",
     "prebuild-install": "^7.1.1"
   },
@@ -55,6 +55,6 @@
     "opencv": "4.1.1-7"
   },
   "devDependencies": {
-    "prebuild": "^11.0.4"
+    "prebuild": "^13.0.0"
   }
 }
