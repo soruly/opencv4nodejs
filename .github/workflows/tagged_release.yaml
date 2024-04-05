@@ -39,7 +39,7 @@ jobs:
         with:
           node-version: 20
       - name: Publish tagged release
-        uses: JS-DevTools/npm-publish@v1
+        uses: JS-DevTools/npm-publish@v3
         with:
           token: ${{ secrets.NPM_TOKEN }}
           access: public
