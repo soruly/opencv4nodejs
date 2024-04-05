@@ -1,6 +1,6 @@
 {
   "name": "@soruly/opencv4nodejs-prebuilt",
-  "version": "6.0.3",
+  "version": "7.0.0",
   "description": "Asynchronous OpenCV 4.x nodejs bindings with JavaScript and TypeScript API.",
   "keywords": [
     "opencv",
